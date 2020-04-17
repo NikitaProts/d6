@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Друзья и их книги{% endblock title %}
+{% block header %}Друг книга:{% endblock header %}
+{% block content %} 
+{% for friend in friends %}
+
+<tr>
+    <td>
+        {{friend.friend_name }} : 
+    </td>
+    {% for book in friend.books.all %}
+    <td>{{ book.title }}</td><br>
+    {% endfor %}
+</tr>
+{% endfor %}
+{% endblock %}
